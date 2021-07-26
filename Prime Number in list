@@ -1,0 +1,44 @@
+package com.company;
+
+import com.sun.jdi.Value;
+import org.w3c.dom.ls.LSOutput;
+
+import java.security.spec.RSAOtherPrimeInfo;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size = in.nextInt();
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        System.out.println("Enter the elements ");
+        for (int i = 0; i < size; i++) {
+            list.add(in.nextInt());
+        }
+        System.out.println("User list is " + list);
+        System.out.println("The Prime Numbers in the lists are ");
+        for(Integer k:list)
+        {
+            int flag = 1;
+            if(k==1)
+                continue;
+            else if(k==2)
+                System.out.print(k+" ");
+            else
+            {
+
+                for (int i = 2; i < k; i++) {
+                    if (k % i == 0) {
+                        flag = 0;
+                    }
+                }
+                if (flag == 1) {
+                    System.out.print(k + " ");
+                }
+            }
+        }
+
+    }
+
+}
